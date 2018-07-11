@@ -23,3 +23,15 @@ libro.save(function(error){
     console.log("Guardado");
     process.exit(0);
 });
+
+//Buscar por author
+Libro.find({author:'Yoyo'}, 
+    function(error, docs){
+        if(error){
+            console.log(error);
+            process.exit(1);
+        }
+        console.log("Consulta Especifica");
+        console.log(docs);
+        process.exit(0);
+    });
