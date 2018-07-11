@@ -35,3 +35,14 @@ Libro.find({author:'Yoyo'},
         console.log(docs);
         process.exit(0);
     });
+//Actualizacion
+User.update({_id : ObjectId('5b45aabae2bbf424d29233a0')},{$set:{email:'plop@ittepic.edu.mx'}},
+function(error, docs){
+    if(error,docs){
+        console.log(error);
+        process.exit(1);        
+    }
+    console.log("Actualizacion");
+    console.log(docs);
+    process.exit(0)
+});
