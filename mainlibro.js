@@ -36,7 +36,7 @@ Libro.find({author:'Yoyo'},
         process.exit(0);
     });
 //Actualizacion
-User.update({_id : ObjectId('5b45aabae2bbf424d29233a0')},{$set:{email:'plop@ittepic.edu.mx'}},
+Libro.update({_id : ObjectId("5b460c79e023220e3805a304")},{$set:{hidden:true}},
 function(error, docs){
     if(error,docs){
         console.log(error);
@@ -46,3 +46,17 @@ function(error, docs){
     console.log(docs);
     process.exit(0)
 });
+
+//Eliminar
+Libro.findByIdAndRemove({_id : ObjectId("5b460efa333f1dc96b9d5090")},
+function(error, docs){
+    if(error,docs){
+        console.log(error);
+        process.exit(1);        
+    }
+    console.log("Eliminar");
+    console.log(docs);
+    process.exit(0)
+});
+
+
